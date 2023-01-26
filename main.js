@@ -1,5 +1,5 @@
 // API criptoYa
-const criptoYa = "https://api.coingecko.com/api/v3/simple/price?ids=usd&vs_currencies=eth";
+const criptoYa = "https://criptoya.com/api/eth/usd/0.1";
 const criptoDiv = document.getElementById("criptoDiv");
 
 setInterval(() => {
