@@ -5,9 +5,9 @@ const criptoDiv = document.getElementById("criptoDiv");
 setInterval(() => {
   fetch(criptoYa)
     .then(response => response.json())
-    .then(({usd, eth}) => {
+    .then(data => {
       criptoDiv.innerHTML = `
-      <h4>${usd} vs ${eth}</h4>
+      <h5 class="text-center mb-3 cotiEth">Cotización 1 ETH = ${data.bitex.totalAsk}u$s</h5>
       `
     })
     .catch(error => console.error(error));
@@ -182,5 +182,5 @@ const calculoTotal = () => {
   carrito.forEach(producto => {
     totalCompra += producto.precio * producto.cantidad;
   })
-  total.innerHTML = `Total: $${totalCompra}`;
+  total.innerHTML = ` $${totalCompra}`;
 }
