@@ -1,3 +1,20 @@
+// API criptoYa
+const criptoYa = "https://api.coingecko.com/api/v3/simple/price?ids=usd&vs_currencies=eth";
+const criptoDiv = document.getElementById("criptoDiv");
+
+setInterval(() => {
+  fetch(criptoYa)
+    .then(response => response.json())
+    .then(({usd, eth}) => {
+      criptoDiv.innerHTML = `
+      <h4>${usd} vs ${eth}</h4>
+      `
+    })
+    .catch(error => console.error(error));
+}, 3000)
+
+// constructor de productos
+
 class Producto {
   constructor(id, nombre, precio, img) {
     this.id = id;
