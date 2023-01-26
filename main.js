@@ -150,6 +150,7 @@ const eliminarDelCarrito = (id) => {
   const indice = carrito.indexOf(producto);
   carrito.splice(indice, 1);
   mostrarCarrito();
+  producto.cantidad = 1;
   // actualizar localStorage
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
