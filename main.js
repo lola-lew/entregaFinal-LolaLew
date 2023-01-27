@@ -1,4 +1,4 @@
-// API criptoYa
+// API criptoYa con cotización de usd contra eth
 const criptoYa = "https://criptoya.com/api/eth/usd/0.1";
 const criptoDiv = document.getElementById("criptoDiv");
 
@@ -48,7 +48,7 @@ if(localStorage.getItem("carrito")) {
   carrito = JSON.parse(localStorage.getItem("carrito"));
 }
 
-// Modificamos el DOM mostrando los productos:
+// Modificar el DOM mostrando los productos:
 
 const contenedorProductos = document.getElementById("contenedorProductos");
 
@@ -74,7 +74,7 @@ const mostrarProductos = () => {
     const boton = document.getElementById(`boton${producto.id}`);
     boton.addEventListener("click", () => {
       agregarAlCarrito(producto.id);
-      // notficación de producto agregado:
+      // notficación de producto agregado con la librería Toastify:
       Toastify({
         text: "Producto agregado al carrito",
         duration: 3000,
