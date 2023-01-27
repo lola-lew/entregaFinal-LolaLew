@@ -168,8 +168,10 @@ vaciarCarrito.addEventListener("click", () => {
 
 const eliminarCarritoCompleto = () => {
   carrito = [];
-  
-  // actualizamos localStorage:
+  productos.forEach(producto => {
+    producto.cantidad = 1;
+  })
+  // actualizar localStorage:
   localStorage.clear();
   mostrarCarrito();
 }
